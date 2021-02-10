@@ -21,6 +21,7 @@ public class Solution_D4_1233_¾çµ¿Çõ {
 	private static void implement() throws IOException {
 		for(int i = 1; i <= N; i++) {
 			st = new StringTokenizer(io.readLine());
+			if(!flag) continue
 			st.nextToken();
 			token = st.nextToken().charAt(0);
 			if(token >= '0' && token <= '9') {
