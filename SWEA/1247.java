@@ -58,4 +58,4 @@ public class Solution_D5_1247_¾çµ¿Çõ {
 		System.out.println(sb.toString());
 	}
 
-}
+}d
