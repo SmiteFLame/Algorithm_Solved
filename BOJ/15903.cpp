@@ -12,7 +12,7 @@ int main(void)
 	long long* data = new long long[N];
 	for (int i = 0; i < N; i++) cin >> data[i];
 	for (int i = 0; i < M; i++) {
-		sort(data, data + N);
+		sort(data, data + N); 
 		data[0] += data[1];
 		data[1] = data[0];
 	}
