@@ -13,7 +13,7 @@ int main(void)
 	char Z;
 	cin >> N >> K;
 	int** map = new int* [N];
-	queue<pair<int, int>> Q;
+	queue<pair<int, int>> Q; 
 	queue<pair<int, char>> QofL;
 
 	for (int i = 0; i < N; i++) {
