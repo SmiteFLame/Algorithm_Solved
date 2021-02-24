@@ -11,7 +11,7 @@ int main(void)
 	cin.tie(0);
 	cout.tie(0);
 	int N, A, B, M, X, Y, answer = 0;
-	cin >> N >> A >> B >> M;
+	cin >> N >> A >> B >> M; 
 	int* parent = new int[N + 1];
 	memset(parent, 0, sizeof(int) * (N + 1));
 	for (int i = 0; i < M; i++) {
