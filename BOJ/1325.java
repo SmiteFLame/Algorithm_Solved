@@ -45,7 +45,7 @@ public class Main_1325 {
 			max = maxList[i] > max ? maxList[i] : max;
 		}
 	}
-
+	 
 	private static void implement() {
 		for (int i = 1; i <= N; i++) {
 			visited = new boolean[N + 1];
