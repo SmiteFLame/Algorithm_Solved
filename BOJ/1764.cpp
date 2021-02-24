@@ -11,7 +11,7 @@ int main(void)
 	int N, M;
 	string A;
 	cin >> N >> M;
-	map<string, bool> S;
+	map<string, bool> S; 
 	vector<string> V;
 	for (int i = 0; i < N; i++) {
 		cin >> A;
