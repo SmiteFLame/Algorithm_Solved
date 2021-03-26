@@ -1,4 +1,4 @@
-# BOJ_SOLUTION
+# Algorithm_Solved
 알고리즘문제
 BOJ - 백준 <br>
 SWEA - 삼성소프트웨어<br>
