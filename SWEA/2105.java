@@ -5,8 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.StringTokenizer;
 
 public class Solution_2105_¾çµ¿Çõ {
@@ -14,9 +12,9 @@ public class Solution_2105_¾çµ¿Çõ {
 	static BufferedWriter ot = new BufferedWriter(new OutputStreamWriter(System.out));
 	static StringTokenizer st;
 
-	static int N, answer;
+	static int N, answer, max;
 	static int[][] data;
-	static Set<Integer> set = new HashSet<>();
+	static boolean[] visited;
 
 	static final int[][] diamond = { { 1, 1 }, { 1, -1 }, { -1, -1 }, { -1, 1 } };
 	
@@ -24,12 +22,10 @@ public class Solution_2105_¾çµ¿Çõ {
 		return !(X < 0 || Y < 0 || X >= N || Y >= N);
 	}
 	
-	private static void DFS(int ogi, int ogj, int i, int j, int dir) {
+	private static void DFS(int ogi, int ogj, int i, int j, int dir, int cnt) {
 		if(dir == 4) {
 			return;
 		}
-		
-		set.add(data[i][j]);
 		
 		int nx = i + diamond[dir][0];
 		int ny = j + diamond[dir][1];
@@ -40,21 +36,21 @@ public class Solution_2105_¾çµ¿Çõ {
 		
 		if(nx == ogi && ny == ogj) {
 			
-			answer = set.size() > answer ? set.size() : answer;
+			answer = cnt > answer ? cnt : answer;
 			
 			return;
 		}
 		
-		if(set.contains(data[nx][ny])) {
+		if(visited[data[nx][ny]]) {
 			return;
 		}
-		
-		set.add(data[nx][ny]);
 
-		DFS(ogi, ogj, nx, ny, dir + 1);
-		DFS(ogi, ogj, nx, ny, dir);		
+		visited[data[nx][ny]] = true;
 
-		set.remove(data[nx][ny]);
+		DFS(ogi, ogj, nx, ny, dir + 1, cnt + 1);
+		DFS(ogi, ogj, nx, ny, dir, cnt + 1);		
+
+		visited[data[nx][ny]] = false;
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -68,14 +64,17 @@ public class Solution_2105_¾çµ¿Çõ {
 				st = new StringTokenizer(in.readLine());
 				for (int j = 0; j < N; j++) {
 					data[i][j] = Integer.parseInt(st.nextToken());
+					max = data[i][j] > max ? data[i][j] : max;
 				}
 			}
 			
+			visited = new boolean[max + 1];
+			
 			for(int i = 0; i < N; i++) {
 				for(int j = 0; j < N; j++) {
-					set.add(data[i][j]);
-					DFS(i, j, i, j, 0);
-					set.clear();
+					visited[data[i][j]] = true;
+					DFS(i, j, i, j, 0, 1);
+					visited[data[i][j]] = false;
 				}
 			}
 			ot.write("#" + tc + " " + answer + "\n");
