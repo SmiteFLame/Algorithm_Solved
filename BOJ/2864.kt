@@ -1,7 +1,5 @@
 package test
 
-import chap03.section1.b
-import chap03.section1.c
 import java.lang.StringBuilder
 import java.util.*
 
