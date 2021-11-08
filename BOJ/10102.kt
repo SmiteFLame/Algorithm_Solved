@@ -13,7 +13,7 @@ fun main() = with(System.`in`.bufferedReader()) {
        }
     }
     if(a == b){
-        print("TIE")
+        print("Tie")
     } else if(a > b){
         print("A")
     } else{
