@@ -22,5 +22,12 @@ fun main() = with(System.`in`.bufferedReader()) {
             numB++
         }
     }
-    println("$numA $numB\n$win")
+    println("$numA $numB")
+    if(numA > numB){
+        print("A")
+    } else if(numA < numB){
+        print("B")
+    } else{
+        print(win)
+    }
 }
