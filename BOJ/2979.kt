@@ -8,7 +8,6 @@ fun main() = with(System.`in`.bufferedReader()) {
     val b = st.nextToken().toInt() * 2
     val c = st.nextToken().toInt() * 3
     val array = Array(101) { 0 }
-    val truck = Array(3) { Array(2) { 0 } }
     var min = 101
     var max = 0
     for (i in 0 until 3) {
