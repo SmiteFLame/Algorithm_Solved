@@ -1,0 +1,32 @@
+package test
+
+import java.util.*
+
+fun main() = with(System.`in`.bufferedReader()) {
+    val st = StringTokenizer(readLine())
+    val s = st.nextToken().toInt()
+    val k = st.nextToken().toInt()
+    val h = st.nextToken().toInt()
+    if(s + k + h >= 100){
+        print("OK")
+    } else{
+        var min = s;
+        if(k < min){
+            min = k
+        }
+        if(h < min){
+            min = h
+        }
+        when (min) {
+            s -> {
+                print("Soongsil")
+            }
+            k -> {
+                print("Korea")
+            }
+            else -> {
+                print("Hanyang")
+            }
+        }
+    }
+}
