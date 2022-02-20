@@ -8,7 +8,7 @@ fun main() = with(System.`in`.bufferedReader()) {
         if (b == 0) return a
         return gcd(b, a % b)
     }
-
+ 
     var st = StringTokenizer(readLine())
     val n = st.nextToken().toInt()
     val s = st.nextToken().toInt()
