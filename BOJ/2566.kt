@@ -1,24 +1,24 @@
 package test
 
-import java.lang.StringBuilder
 import java.util.*
 
-
 fun main() = with(System.`in`.bufferedReader()) {
-    var max = 0
-    var W = 0
-    var H = 0
+    var maxNumber = 0
+    var maxRow = 1
+    var maxColumn = 1
     for(i in 1..9){
-        var st = StringTokenizer(readLine())
+        val st = StringTokenizer(readLine())
         for(j in 1..9){
-            var now = st.nextToken().toInt()
-            if(now > max){
-                max = now
-                H = i
-                W = j
+            val now = st.nextToken().toInt()
+            if(now > maxNumber){
+                maxNumber = now
+                maxRow = i
+                maxColumn = j
             }
         }
     }
-    println(max)
-    print("$H $W")
+    val sb = StringBuilder()
+    sb.append(maxNumber).append("\n")
+    sb.append(maxRow).append(" ").append(maxColumn)
+    print(sb.toString())
 }
