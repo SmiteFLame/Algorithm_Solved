@@ -1,0 +1,2 @@
+SELECT MAX(price)
+FROM PRODUCT;
